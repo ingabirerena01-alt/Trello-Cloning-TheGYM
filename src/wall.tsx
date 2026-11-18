@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <div
-        className="h-screen bg-cover bg-center flex flex-col"
+        className="h-screen bg-cover bg-center flex flex-col overflow-hidden"
         style={{ backgroundImage: `url(${Background})` }}
       >
         <div className="h-20 bg-[#B65336] flex items-center justify-between">
@@ -41,13 +41,9 @@ export default function Home() {
             <Ellipsis className="invert" />
           </div>
         </div>
-        <div className="flex">
-          <Board name="Weekly Activity" />
-          <Board name="Daily" />
-          <Board name="To do" />
-          <Board name="Weekly Archive" />
+        <div className="flex-1 overflow-hidden">
+          <Board />
         </div>
-
         <div className="flex justify-center mb-20 mt-auto">
           <Options />
         </div>
