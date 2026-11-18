@@ -8,12 +8,7 @@ type Props = {
 export default function List(Props: Props) {
   const [cardname, Addcardname] = useState<string>("");
   const [cards, Addcard] = useState<string[]>([]);
-  const [ad, setad] = useState(false);
-  //   const [close, closeadd] = useState(false);
-  //   function handlecllick(e: React.SyntheticEvent) {
-  //     e.preventDefault();
-  //     closeadd((prev) => !prev);
-  //   }
+  const [ad, setad] = useState(true);
   function Handlesubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     if (cardname.length == 0) {
@@ -70,14 +65,14 @@ export default function List(Props: Props) {
           </div>
         ) : (
           <div>
-            <form onSubmit={Handlesubmit}>
+            <form className="mt-3" onSubmit={Handlesubmit}>
               <Trellocard name={cardname} Addcardname={Addcardname} />
             </form>
             <div className="flex gap-2 mb-4 ml-3 mr-3 items-center">
-              <button className=" bg-amber-500 rounded-lg py-3 px-4 ">
+              <button className=" bg-blue-500 rounded-lg py-3 px-4 ">
                 AddCard
               </button>
-              <button className=" bg-amber-500 rounded-lg py-3 px-4">
+              <button className=" bg-fuchsia-900 rounded-lg py-3 px-4">
                 Tip
               </button>
               <X className="invert-75" onClick={HandleClick} />
